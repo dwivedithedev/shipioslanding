@@ -8,8 +8,17 @@ module.exports = withBundleAnalyzer({
   poweredByHeader: false,
   trailingSlash: true,
   basePath: '',
-  // The starter code load resources from `public` folder with `router.basePath` in React components.
-  // So, the source code is "basePath-ready".
-  // You can remove `basePath` if you don't need it.
   reactStrictMode: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https', // Assuming your images are served over HTTPS
+        hostname: 'images.pexels.com', // Existing allowed host
+      },
+      {
+        protocol: 'https', // Assuming your images are served over HTTPS
+        hostname: 'www.kataru.app', // New allowed host
+      },
+    ],
+  },
 });
