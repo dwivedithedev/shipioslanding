@@ -52,6 +52,12 @@ export default function Home() {
           name='twitter:image'
           content='https://sp-production-image.s3.amazonaws.com/1440092/73279ff1-c0a4-47c4-8be7-143c33e1c1f5.png'
         />
+        <script
+          defer
+          src='https://cloud.umami.is/script.js'
+          data-website-id='7e364dd5-e4fa-464d-8870-5bb8a3a59705'
+        ></script>
+        <script defer src='https://cdn.paritydeals.com/banner.js'></script>
       </Head>
 
       <div className='isolate bg-white'>
