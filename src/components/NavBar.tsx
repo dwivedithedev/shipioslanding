@@ -8,6 +8,7 @@ const navigation = [
   { name: 'Case Study', href: '#case' },
   { name: 'Pricing', href: '#pricing' },
   { name: 'FAQ', href: '#faq' },
+  { name: 'Affiliates', href: 'https://selftalk.lemonsqueezy.com/affiliates' },
 ];
 
 export const Navbar = () => {

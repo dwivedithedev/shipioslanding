@@ -80,7 +80,7 @@ export default function Home() {
                   Ship Your First iOS App <Cover>Super-Duper Fast!</Cover>
                 </h1>
                 <p className='mt-6 text-lg leading-8 text-gray-600'>
-                  Ready-to-use starter boilerplate for building modern iOS
+                  Ready-to-use SwiftUI boilerplate for building modern iOS
                   applications
                   <br /> + Save time and effort with additional perks!
                 </p>

@@ -58,6 +58,14 @@ export const Footer = () => {
         <ul className='flex flex-col mb-3 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row'>
           <li>
             <a
+              href='https://selftalk.lemonsqueezy.com/affiliates'
+              className='text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400'
+            >
+              Affiliates - Earn upto 50% per Sale
+            </a>
+          </li>
+          <li>
+            <a
               href='#faq'
               className='text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400'
             >

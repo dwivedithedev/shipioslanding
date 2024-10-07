@@ -67,9 +67,9 @@ export const Faq = () => {
             Xcode 16 and iOS 18.
           </Item>
           <Item title='What if this is my first time?'>
-            Don't worry. The documents are written in simple language for your
-            to follow through. Also, you can join Cohorts where like-minded
-            folks would be willing to help you out.
+            The documents are written in simple language for you to follow
+            through. Also, you can join Cohorts where like-minded folks would be
+            willing to help you out.
           </Item>
           <Item title='Do you offer any discounts?'>
             If you are a student or have a special case, please write to me.

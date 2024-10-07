@@ -8,8 +8,9 @@ export const Pricing = () => {
           </h2>
 
           <p className='mx-auto max-w-screen-md text-center text-gray-500 md:text-lg'>
-            For an unbelievable price, you will get a Bundle that helps you ship
-            your first iOS application. Ready to bring your idea to light?
+            For an unbelievable price, you'll get the whole package to ship your
+            first iOS application. <br />
+            Ready to bring your idea to light?
           </p>
         </div>
 
@@ -92,7 +93,7 @@ export const Pricing = () => {
             <div className='mb-4 flex flex-col items-start justify-between gap-4 lg:flex-row'>
               <div>
                 <h3 className='text-2xl font-semibold text-white sm:text-3xl'>
-                  ShipiOS Boilerplate
+                  ShipiOS Package
                 </h3>
                 <p className='text-indigo-100'>One Time Payment</p>
               </div>
