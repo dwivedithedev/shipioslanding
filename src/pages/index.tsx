@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Script from 'next/script';
 
 import { Case } from '../components/Case';
 import { Faq } from '../components/FAQ';
@@ -11,6 +12,16 @@ import { Cover } from '../components/ui/cover';
 export default function Home() {
   return (
     <>
+      <Script
+        id='lemon-squeezy-config'
+        strategy='lazyOnload'
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.lemonSqueezyAffiliateConfig = { store: "selftalk" };
+          `,
+        }}
+      />
+      <Script src='https://lmsqueezy.com/affiliate.js' strategy='lazyOnload' />
       <Head>
         <title>ShipiOS.App - More Than Just A SwiftUI Boilerplate</title>
         <meta
