@@ -5,10 +5,11 @@ import { useState } from 'react';
 
 const navigation = [
   { name: 'Features', href: '#features' },
-  { name: 'Case Study', href: '#case' },
+  // { name: 'Case Study', href: '#case' },
   { name: 'Pricing', href: '#pricing' },
   { name: 'FAQ', href: '#faq' },
-  { name: 'Affiliates', href: 'https://selftalk.lemonsqueezy.com/affiliates' },
+  { name: 'Components', href: '/components' },
+  // { name: 'Affiliates', href: 'https://selftalk.lemonsqueezy.com/affiliates' },
 ];
 
 export const Navbar = () => {

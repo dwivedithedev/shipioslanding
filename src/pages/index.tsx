@@ -27,7 +27,7 @@ export default function Home() {
         <meta
           name='description'
           content={`
-          A ready-to-use starter template for building fast and modern web applications.
+          A ready-to-use Swift UI boilerplate for building fast and modern web applications.
           Includes basic configurations and optimizations for
           optimal performance and development experience.
         `}

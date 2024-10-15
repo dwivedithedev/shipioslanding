@@ -1,0 +1,30 @@
+---
+title: 'Haptic Feedback'
+date: '2024-10-01'
+image: 'https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cnkmzgonz7tpxsi9fafs.png'
+---
+
+Just copy the below code and modify according to your needs.
+
+```
+struct HomeView: View {
+    let lightFeedback = UIImpactFeedbackGenerator(style: .light) // Change style
+    let mediumFeedback = UIImpactFeedbackGenerator(style: .medium)
+    let heavyFeedback = UIImpactFeedbackGenerator(style: .heavy)
+
+    var body: some View {
+        Button("Light Feedback") {
+            lightFeedback.impactOccurred() // Use this line for haptic feedback
+        }
+
+        Button("Medium Feedback") {
+            mediumFeedback.impactOccurred()
+        }
+
+        Button("Heavy Feedback") {
+            heavyFeedback.impactOccurred()
+        }
+    }
+
+}
+```

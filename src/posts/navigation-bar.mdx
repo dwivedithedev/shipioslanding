@@ -1,0 +1,55 @@
+---
+title: 'Navigation bar'
+date: '2024-10-01'
+image: 'https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ew2dy00ob7t10vkcg4z7.png'
+---
+
+1. Create a new SwiftView file called "HomeView".
+
+2. Replace the ContentView() with HomeView() in YourAppNameApp.swift (In this case, my project is called ShipiOS. Thus, file name is ShipiOSApp.swift)
+
+```
+var body: some Scene {
+        WindowGroup {
+            HomeView()
+        }
+    }
+```
+
+3. Lastly, add the following code in your HomeView() file:
+
+```
+struct HomeView: View {
+    @State private var selectedTab = 0 // Track the selected tab
+    let generator = UIImpactFeedbackGenerator(style: .light) // For Haptics
+
+    @EnvironmentObject var userCommonData: CommonData
+
+    var body: some View {
+        TabView(selection: $selectedTab) {
+            ContentView() // Replace with your view
+                .tabItem {
+                    Label("Home", systemImage: "house")
+                }
+                .tag(0)
+
+            SecondView() // Replace with your view
+                .tabItem {
+                    Label("Chats", systemImage: "tray")
+                }
+                .tag(1)
+
+            ThirdView() // Replace with your view
+                .tabItem {
+                    Label("Profile", systemImage: "gearshape")
+                }
+                .tag(2)
+        }
+        .accentColor(Color("AppSecondaryColor"))
+        .onChange(of: selectedTab) {
+            generator.impactOccurred()
+        }
+    }
+
+}
+```

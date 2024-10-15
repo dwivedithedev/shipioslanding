@@ -1,0 +1,36 @@
+---
+title: 'Floating Action Button'
+date: '2024-10-01'
+image: 'https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5nltg2befz51oklkvkf6.png'
+---
+
+Just copy the below code and modify according to your needs.
+
+```
+var body: some View {
+    VStack(spacing: 20) {
+        // ...
+    }
+    .frame(maxWidth: .infinity, maxHeight: .infinity)
+    .overlay(
+        VStack {
+            Spacer() // Pushes the button to the bottom
+            HStack {
+                Spacer() // Pushes the button to the right
+                Button(action: {
+                    // Button Action here
+                }) {
+                    Image(systemName: "plus")
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color(.green))
+                        .clipShape(Circle())
+                        .shadow(color: Color(.gray), radius: 2.5)
+                }
+                .padding()
+            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+    )
+}
+```

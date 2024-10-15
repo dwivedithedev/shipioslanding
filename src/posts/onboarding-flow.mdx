@@ -1,0 +1,78 @@
+---
+title: 'Onboarding Flow'
+date: '2024-10-01'
+image: 'https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1yn7hcw79fbgyviugrq5.png'
+---
+
+Just copy the below code and modify according to your needs.
+
+```
+struct ContentView: View {
+    @State private var showOnboarding = false
+
+    var body: some View {
+        VStack {
+            if showOnboarding {
+                OnboardingView()
+            } else {
+                MainView() // Your main app content
+            }
+        }
+        .onAppear {
+            checkUser() // Check onboarding status
+        }
+    }
+
+    func checkUser() {
+        // Logic to check if user is onboarded
+        let userOnboarded = UserDefaults.standard.bool(forKey: "userOnboarded")
+        showOnboarding = !userOnboarded
+    }
+}
+
+struct OnboardingView: View {
+    var body: some View {
+        VStack {
+            TabView {
+                VStack {
+                    Image(systemName: "star.fill")
+                        .resizable()
+                        .frame(width: 100, height: 100)
+                    Text("Welcome to the App")
+                        .font(.largeTitle)
+                        .bold()
+                        .padding()
+                    Text("Discover amazing features")
+                        .font(.subheadline)
+                        .padding()
+                }
+
+                VStack {
+                    Image(systemName: "heart.fill")
+                        .resizable()
+                        .frame(width: 100, height: 100)
+                    Text("Stay Connected")
+                        .font(.largeTitle)
+                        .bold()
+                        .padding()
+                    Text("Connect with friends and family")
+                        .font(.subheadline)
+                        .padding()
+                }
+            }
+            .tabViewStyle(PageTabViewStyle())
+            .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+
+            Button("Get Started") {
+                // Mark user as onboarded
+                UserDefaults.standard.set(true, forKey: "userOnboarded")
+                // Navigate to the main content
+            }
+            .padding()
+            .background(Color.blue)
+            .foregroundColor(.white)
+            .cornerRadius(10)
+        }
+    }
+}
+```

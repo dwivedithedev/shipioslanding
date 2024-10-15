@@ -1,0 +1,43 @@
+---
+title: 'Bottom Sheet'
+date: '2024-10-01'
+image: 'https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5evup7z5uj86zde3cxla.gif'
+---
+
+Just copy the below code and modify according to your needs.
+
+```
+@State var shouldPresentSheet = false
+
+    var body: some View {
+        VStack {
+          // ...
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .overlay(
+                VStack {
+                    Spacer() // Pushes the button to the bottom
+                    HStack {
+                        Spacer() // Pushes the button to the right
+                        Button(action: {
+                            shouldPresentSheet.toggle() // Toggles sheet On/Off
+                        }) {
+                            Image(systemName: "plus")
+                                .foregroundColor(.white)
+                                .padding()
+                                .background(Color(.orange))
+                                .clipShape(Circle())
+                                .shadow(color: Color(.gray), radius: 2.5)
+                        }
+                        .sheet(isPresented: $shouldPresentSheet) {
+                            print("Sheet dismissed!")
+                        } content: {
+                            Text("In the sheets!")
+                        }
+                        .padding()
+                    }
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            )
+    }
+```
