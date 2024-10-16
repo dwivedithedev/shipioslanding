@@ -4,10 +4,10 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 const navigation = [
-  { name: 'Features', href: '#features' },
+  { name: 'Features', href: 'https://www.shipios.app/#features' },
   // { name: 'Case Study', href: '#case' },
-  { name: 'Pricing', href: '#pricing' },
-  { name: 'FAQ', href: '#faq' },
+  { name: 'Pricing', href: 'https://www.shipios.app/#pricing' },
+  { name: 'FAQ', href: 'https://www.shipios.app/#faq' },
   { name: 'Components', href: '/components' },
   // { name: 'Affiliates', href: 'https://selftalk.lemonsqueezy.com/affiliates' },
 ];
