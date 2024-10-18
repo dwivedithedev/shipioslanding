@@ -43,7 +43,7 @@ export default function Home() {
         />
         <meta
           property='og:description'
-          content='ShipiOS simplifies iOS app development with a feature-rich boilerplate and some amazing extra perks!'
+          content='ShipiOS simplifies iOS app development with a feature-rich swiftui boilerplate and some amazing extra perks!'
         />
         <meta
           property='og:image'
@@ -57,7 +57,7 @@ export default function Home() {
         />
         <meta
           name='twitter:description'
-          content='ShipiOS simplifies iOS app development with a feature-rich boilerplate and some amazing extra perks!'
+          content='ShipiOS simplifies iOS app development with a feature-rich swiftui boilerplate and some amazing extra perks!'
         />
         <meta
           name='twitter:image'

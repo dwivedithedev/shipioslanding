@@ -18,11 +18,11 @@ function generateSiteMap() {
         <lastmod>${new Date().toISOString()}</lastmod>
       </url>
       <url>
-        <loc>${homepage}/components/privacy</loc>
+        <loc>${homepage}/privacy</loc>
         <lastmod>${new Date().toISOString()}</lastmod>
       </url>
       <url>
-        <loc>${homepage}/components/tos</loc>
+        <loc>${homepage}/tos</loc>
         <lastmod>${new Date().toISOString()}</lastmod>
       </url>
       <url>
@@ -51,6 +51,34 @@ function generateSiteMap() {
       </url>
       <url>
         <loc>${homepage}/components/custom-tab-bar</loc>
+        <lastmod>${new Date().toISOString()}</lastmod>
+      </url>
+      <url>
+        <loc>${homepage}/components/alerts</loc>
+        <lastmod>${new Date().toISOString()}</lastmod>
+      </url>
+      <url>
+        <loc>${homepage}/components/dark-mode</loc>
+        <lastmod>${new Date().toISOString()}</lastmod>
+      </url>
+      <url>
+        <loc>${homepage}/components/context-menus</loc>
+        <lastmod>${new Date().toISOString()}</lastmod>
+      </url>
+      <url>
+        <loc>${homepage}/components/custom-toggle-button</loc>
+        <lastmod>${new Date().toISOString()}</lastmod>
+      </url>
+      <url>
+        <loc>${homepage}/components/progress-bars</loc>
+        <lastmod>${new Date().toISOString()}</lastmod>
+      </url>
+      <url>
+        <loc>${homepage}/components/pull-to-refresh</loc>
+        <lastmod>${new Date().toISOString()}</lastmod>
+      </url>
+      <url>
+        <loc>${homepage}/components/swipe-tap-pinch-gesture</loc>
         <lastmod>${new Date().toISOString()}</lastmod>
       </url>
     </urlset>

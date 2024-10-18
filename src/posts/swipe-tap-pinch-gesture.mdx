@@ -1,0 +1,67 @@
+---
+title: 'Swipe, Tap & Pinch Gestures'
+date: '2024-10-18'
+image: 'https://dev-to-uploads.s3.amazonaws.com/uploads/articles/arizf87rspcpjxusm0us.gif'
+---
+
+Just copy the below code and modify according to your needs.
+
+```
+import SwiftUI
+
+struct GestureRecognizersView: View {
+    @State private var circleColor = Color.blue // Color for tap gesture
+    @State private var offsetX: CGFloat = 0.0 // X-offset for swipe gesture
+    @State private var scale: CGFloat = 1.0 // Scale for pinch gesture
+
+    var body: some View {
+        VStack(spacing: 40) {
+            // Circle with Tap Gesture
+            Circle()
+                .fill(circleColor)
+                .frame(width: 100, height: 100)
+                .onTapGesture {
+                    // Change color on tap
+                    circleColor = circleColor == .blue ? .red : .blue
+                }
+                .overlay(Text("Tap Me").foregroundColor(.white)) // Label on the circle
+
+            // Rectangle with Swipe Gesture
+            RoundedRectangle(cornerRadius: 20)
+                .fill(Color.green)
+                .frame(width: 200, height: 100)
+                .offset(x: offsetX) // Move based on swipe
+                .gesture(
+                    DragGesture()
+                        .onEnded { value in
+                            if value.translation.width > 0 {
+                                // Swipe right
+                                offsetX += 100
+                            } else {
+                                // Swipe left
+                                offsetX -= 100
+                            }
+                        }
+                )
+                .overlay(Text("Swipe Me").foregroundColor(.white)) // Label on the rectangle
+
+            // Image with Pinch Gesture
+            Image(systemName: "photo")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 150, height: 150)
+                .scaleEffect(scale) // Scale based on pinch
+                .gesture(
+                    MagnificationGesture()
+                        .onChanged { value in
+                            scale = value.magnitude // Pinch scaling
+                        }
+                )
+                .overlay(Text("Pinch Me").foregroundColor(.black)) // Label on the image
+        }
+        .padding()
+        .animation(.easeInOut, value: scale) // Smooth animations
+        .animation(.easeInOut, value: offsetX)
+    }
+}
+```

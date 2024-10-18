@@ -1,0 +1,47 @@
+---
+title: 'Progress Bars'
+date: '2024-10-18'
+image: 'https://dev-to-uploads.s3.amazonaws.com/uploads/articles/02x3b6h9czy50u8i00m7.gif'
+---
+
+Just copy the below code and modify according to your needs.
+
+```
+import SwiftUI
+
+struct ContentView: View {
+    @State private var progress = 0.0 // State variable to track progress
+
+    var body: some View {
+        VStack {
+            ProgressView("Loading...", value: progress, total: 100) // Progress bar
+                .progressViewStyle(LinearProgressViewStyle()) // Style of the progress bar
+                .padding()
+
+            Button("Start Loading") {
+                startLoading() // Start the loading process
+            }
+            .padding()
+        }
+        .padding()
+    }
+
+    func startLoading() {
+        progress = 0.0 // Reset progress
+        for i in 1...100 {
+            DispatchQueue.main.asyncAfter(deadline: .now() + Double(i) * 0.1) {
+                progress = Double(i) // Update progress
+            }
+        }
+    }
+}
+
+@main
+struct ProgressIndicatorApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView() // Main content view
+        }
+    }
+}
+```

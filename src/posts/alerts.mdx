@@ -1,0 +1,35 @@
+---
+title: 'Alerts'
+date: '2024-10-18'
+image: 'https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vsvl8ubc4792b6r3bx5l.png'
+---
+
+Just copy the below code and modify according to your needs.
+
+```
+import SwiftUI
+
+struct ContentView: View {
+    @State private var showAlert = false // State variable to control alert visibility
+
+    var body: some View {
+        VStack {
+            Button("Show Alert") {
+                showAlert.toggle() // Toggle alert visibility
+            }
+            .alert(isPresented: $showAlert) { // Present the alert when showAlert is true
+                Alert(
+                    title: Text("Alert Title"), // Title of the alert
+                    message: Text("This is an alert message."), // Message to display
+                    primaryButton: .default(Text("Confirm")) {
+                        // Action to perform on Confirm
+                        print("Confirmed!")
+                    },
+                    secondaryButton: .cancel() // Action to perform on Cancel
+                )
+            }
+        }
+        .padding()
+    }
+}
+```

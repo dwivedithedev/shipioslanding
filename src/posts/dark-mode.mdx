@@ -1,0 +1,54 @@
+---
+title: 'Dark Mode'
+date: '2024-10-01'
+image: 'https://dev-to-uploads.s3.amazonaws.com/uploads/articles/j1x2d6x73k6e4vv1uuws.gif'
+---
+
+Just copy the below code and modify according to your needs.
+
+```
+import SwiftUI
+
+struct DarkModeToggleView: View {
+    @State private var isDarkMode = false // State to track the mode
+
+    var body: some View {
+        VStack {
+            // Title Text
+            Text("Dark Mode Toggle")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .padding()
+
+            // Example image to showcase the mode effect
+            Image(systemName: isDarkMode ? "moon.fill" : "sun.max.fill")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 100, height: 100)
+                .foregroundColor(isDarkMode ? .yellow : .orange) // Custom color for each mode
+                .padding()
+
+            // Toggle switch with label
+            Toggle(isOn: $isDarkMode) {
+                Text(isDarkMode ? "Dark Mode" : "Light Mode")
+                    .font(.headline)
+            }
+            .toggleStyle(SwitchToggleStyle(tint: .blue)) // Beautiful blue accent color
+            .padding()
+
+        }
+        // Apply the color scheme dynamically
+        .preferredColorScheme(isDarkMode ? .dark : .light)
+        .animation(.easeInOut, value: isDarkMode) // Smooth transition between modes
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(isDarkMode ? Color.black : Color.white) // Set background color based on mode
+        .edgesIgnoringSafeArea(.all)
+    }
+}
+
+struct DarkModeToggleView_Previews: PreviewProvider {
+    static var previews: some View {
+        DarkModeToggleView()
+    }
+}
+```

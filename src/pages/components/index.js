@@ -58,11 +58,11 @@ export default function BlogIndex({ posts }) {
         />
         <meta
           property='og:description'
-          content='ShipiOS simplifies iOS app development with a feature-rich boilerplate and some amazing extra perks!'
+          content='ShipiOS simplifies iOS app development with a feature-rich swiftui boilerplate and some amazing extra perks!'
         />
         <meta
           property='og:image'
-          content='https://sp-production-image.s3.amazonaws.com/1440092/73279ff1-c0a4-47c4-8be7-143c33e1c1f5.png'
+          content='https://sp-production-image.s3.amazonaws.com/1440092/6f0e0b2b-4035-42b3-b23c-513033421cbe.png'
         />
 
         <meta name='twitter:card' content='summary_large_image' />
@@ -72,11 +72,11 @@ export default function BlogIndex({ posts }) {
         />
         <meta
           name='twitter:description'
-          content='ShipiOS simplifies iOS app development with a feature-rich boilerplate and some amazing extra perks!'
+          content='ShipiOS simplifies iOS app development with a feature-rich swiftui boilerplate and some amazing extra perks!'
         />
         <meta
           name='twitter:image'
-          content='https://sp-production-image.s3.amazonaws.com/1440092/73279ff1-c0a4-47c4-8be7-143c33e1c1f5.png'
+          content='https://sp-production-image.s3.amazonaws.com/1440092/6f0e0b2b-4035-42b3-b23c-513033421cbe.png'
         />
       </Head>
       <div className=''>

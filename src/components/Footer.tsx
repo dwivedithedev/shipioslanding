@@ -17,7 +17,7 @@ export const Footer = () => {
           </Link>
           <div className='mt-6 lg:max-w-sm'>
             <p className='text-sm text-gray-800'>
-              I told you it's more than just a boilerplate.
+              I told you it's more than just a boilerplate :)
             </p>
             <p className='mt-4 text-sm text-gray-800'>Made with ❤️ on 🌍</p>
           </div>
@@ -25,28 +25,26 @@ export const Footer = () => {
         <div className='space-y-2 text-sm'></div>
         <div>
           <p className='text-base font-bold tracking-wide text-gray-900'>
-            Need help?
+            Need help? Reach out on:
           </p>
           <div className='flex'>
-            <p className='mr-1 text-gray-800'>Twitter/X:</p>
             <a
               href='https://x.com/vaibhavThevedi'
               aria-label='X'
               title='X'
               className='transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800'
             >
-              Vaibhav
+              Twitter/X
             </a>
           </div>
           <div className='flex'>
-            <p className='mr-1 text-gray-800'>Email:</p>
             <a
               href='mailto:info@shipios.app'
               aria-label='Our email'
               title='Our email'
               className='transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800'
             >
-              info@shipios.app
+              Email
             </a>
           </div>
         </div>

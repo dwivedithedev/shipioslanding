@@ -1,0 +1,46 @@
+---
+title: 'Pull to Refresh'
+date: '2024-10-18'
+image: 'https://dev-to-uploads.s3.amazonaws.com/uploads/articles/corrg4m4gkw91zjg39tg.gif'
+---
+
+Just copy the below code and modify according to your needs.
+
+```
+import SwiftUI
+
+struct ContentView: View {
+    @State private var items = ["Item 1", "Item 2", "Item 3"] // Sample data
+    @State private var isLoading = false // State to manage loading state
+
+    var body: some View {
+        NavigationView {
+            List(items, id: \.self) { item in
+                Text(item) // Display items in the list
+            }
+            .navigationTitle("Pull to Refresh")
+            .refreshable {
+                await loadData() // Call the async function to load data
+            }
+        }
+    }
+
+    func loadData() async {
+        isLoading = true // Set loading state
+        // Simulate network delay
+        try? await Task.sleep(nanoseconds: 2 * 1_000_000_000) // Wait for 2 seconds
+        // Update items with new data
+        items.append("Item \(items.count + 1)") // Add a new item for demonstration
+        isLoading = false // Reset loading state
+    }
+}
+
+@main
+struct PullToRefreshApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView() // Main content view
+        }
+    }
+}
+```

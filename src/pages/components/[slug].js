@@ -54,7 +54,7 @@ const BlogPost = ({ frontMatter, mdxSource }) => {
           <meta
             name='description'
             content={`
-          Learn to add a ${frontMatter.title} to your iOS App. ShipiOS.app is a ready-to-use SwiftUI boilerplate for building fast and modern web applications.
+          Learn to add ${frontMatter.title} with Xcode 16 and iOS 18 support for your iOS App. ShipiOS.app is a ready-to-use SwiftUI boilerplate for building fast and modern web applications.
           Includes basic configurations and optimizations for
           optimal performance and development experience.
         `}
@@ -66,29 +66,37 @@ const BlogPost = ({ frontMatter, mdxSource }) => {
           <meta property='og:type' content='website' />
           <meta
             property='og:title'
-            content='Free SwiftUI Component Library | ShipiOS.App'
+            content={`Tutorial for ${frontMatter.title} | Free SwiftUI Component Library | ShipiOS.App`}
           />
           <meta
             property='og:description'
-            content='ShipiOS simplifies iOS app development with a feature-rich boilerplate and some amazing extra perks!'
+            content={`
+              Learn to add ${frontMatter.title} with Xcode 16 and iOS 18 support for your iOS App. ShipiOS.app is a ready-to-use SwiftUI boilerplate for building fast and modern web applications.
+              Includes basic configurations and optimizations for
+              optimal performance and development experience.
+            `}
           />
           <meta
             property='og:image'
-            content='https://sp-production-image.s3.amazonaws.com/1440092/73279ff1-c0a4-47c4-8be7-143c33e1c1f5.png'
+            content='https://sp-production-image.s3.amazonaws.com/1440092/6f0e0b2b-4035-42b3-b23c-513033421cbe.png'
           />
 
           <meta name='twitter:card' content='summary_large_image' />
           <meta
             name='twitter:title'
-            content='Free SwiftUI Component Library | ShipiOS.App'
+            content={`${frontMatter.title} | Free SwiftUI Component Library | ShipiOS.App`}
           />
           <meta
             name='twitter:description'
-            content='ShipiOS simplifies iOS app development with a feature-rich boilerplate and some amazing extra perks!'
+            content={`
+              Learn to add ${frontMatter.title} with Xcode 16 and iOS 18 support for your iOS App. ShipiOS.app is a ready-to-use SwiftUI boilerplate for building fast and modern web applications.
+              Includes basic configurations and optimizations for
+              optimal performance and development experience.
+            `}
           />
           <meta
             name='twitter:image'
-            content='https://sp-production-image.s3.amazonaws.com/1440092/73279ff1-c0a4-47c4-8be7-143c33e1c1f5.png'
+            content='https://sp-production-image.s3.amazonaws.com/1440092/6f0e0b2b-4035-42b3-b23c-513033421cbe.png'
           />
         </Head>
         <Navbar />
@@ -104,6 +112,10 @@ const BlogPost = ({ frontMatter, mdxSource }) => {
             <h1 className='text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14'>
               {frontMatter.title}
             </h1>
+            <h4 className='text-md leading-9 tracking-tight text-gray-900'>
+              Learn to add {frontMatter.title} to your iOS App (Supports Xcode
+              16 and iOS 18)
+            </h4>
             <div className='relative flex items-center justify-between'>
               <Image
                 src={
@@ -117,9 +129,6 @@ const BlogPost = ({ frontMatter, mdxSource }) => {
                 height={300}
               />
             </div>
-            <h4 className='text-md leading-9 tracking-tight text-gray-900'>
-              Learn to add a {frontMatter.title} to your iOS App
-            </h4>
           </div>
           <article className='prose prose-sm lg:prose-lg mx-auto'>
             <MDXRemote {...mdxSource} />

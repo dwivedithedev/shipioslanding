@@ -1,0 +1,53 @@
+---
+title: 'Context Menus'
+date: '2024-10-18'
+image: 'https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wz0nnvvhhowxqk84ej2w.gif'
+---
+
+Just copy the below code and modify according to your needs.
+
+```
+struct ContextMenuExample: View {
+    @State private var favorite: Bool = false
+
+    var body: some View {
+        VStack {
+            HStack {
+                Text("Long-press me!")
+                    .font(.title2)
+                    .padding()
+                Spacer()
+                if favorite {
+                    Image(systemName: "heart.fill")
+                        .foregroundColor(.red) // Customization: Heart icon if marked as favorite
+                }
+            }
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(Color.blue.opacity(0.2)) // Custom background color
+            .cornerRadius(10) // Rounded corners for aesthetic touch
+            .contextMenu { // Adding the context menu
+                Button(action: {
+                    favorite.toggle()
+                }) {
+                    Label("Favorite", systemImage: favorite ? "heart.fill" : "heart")
+                }
+
+                Button(action: {
+                    print("Shared!")
+                }) {
+                    Label("Share", systemImage: "square.and.arrow.up")
+                }
+
+                Button(action: {
+                    print("Deleted!")
+                }) {
+                    Label("Delete", systemImage: "trash")
+                        .foregroundColor(.red) // Custom color for danger actions
+                }
+            }
+        }
+        .padding()
+    }
+}
+```

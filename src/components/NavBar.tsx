@@ -8,7 +8,7 @@ const navigation = [
   // { name: 'Case Study', href: '#case' },
   { name: 'Pricing', href: 'https://www.shipios.app/#pricing' },
   { name: 'FAQ', href: 'https://www.shipios.app/#faq' },
-  { name: 'Components', href: '/components' },
+  { name: 'Components (15)', href: '/components' },
   // { name: 'Affiliates', href: 'https://selftalk.lemonsqueezy.com/affiliates' },
 ];
 

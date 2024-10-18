@@ -1,0 +1,60 @@
+---
+title: 'Custom Toggle Button'
+date: '2024-10-18'
+image: 'https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zvn47oyqkhehanim29pi.png'
+---
+
+Just copy the below code and modify according to your needs.
+
+```
+import SwiftUI
+
+struct CustomToggle: View {
+    @Binding var isOn: Bool // Binding variable for toggle state
+
+        var body: some View {
+            HStack {
+                Text("Toggle Setting")
+                    .foregroundColor(.primary) // Text color
+                Spacer()
+                // Custom square toggle design
+                RoundedRectangle(cornerRadius: 5) // Rounded corners
+                    .fill(isOn ? Color.blue : Color.gray) // Toggle color based on state
+                    .frame(width: 60, height: 30) // Toggle size
+                    .overlay(
+                        Rectangle() // Square knob design
+                            .fill(Color.white)
+                            .frame(width: 26, height: 26)
+                            .offset(x: isOn ? 15 : -15) // Move the square based on state
+                            .animation(.easeInOut(duration: 0.2), value: isOn) // Animation for smooth transition
+                    )
+                    .onTapGesture {
+                        isOn.toggle() // Toggle the state on tap
+                    }
+            }
+            .padding() // Padding for the entire toggle
+        }
+    }
+
+struct ContentView: View {
+    @State private var isToggleOn = false // State to manage toggle status
+
+    var body: some View {
+        VStack {
+            CustomToggle(isOn: $isToggleOn) // Custom toggle instance
+            Text(isToggleOn ? "Setting is ON" : "Setting is OFF") // Display current state
+                .padding()
+        }
+        .padding()
+    }
+}
+
+@main
+struct CustomToggleApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView() // Main content view
+        }
+    }
+}
+```
