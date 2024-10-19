@@ -81,6 +81,22 @@ function generateSiteMap() {
         <loc>${homepage}/components/swipe-tap-pinch-gesture</loc>
         <lastmod>${new Date().toISOString()}</lastmod>
       </url>
+      <url>
+        <loc>${homepage}/components/splitview</loc>
+        <lastmod>${new Date().toISOString()}</lastmod>
+      </url>
+      <url>
+        <loc>${homepage}/components/spinners</loc>
+        <lastmod>${new Date().toISOString()}</lastmod>
+      </url>
+      <url>
+        <loc>${homepage}/components/lottie-animations</loc>
+        <lastmod>${new Date().toISOString()}</lastmod>
+      </url>
+      <url>
+        <loc>${homepage}/components/avkit</loc>
+        <lastmod>${new Date().toISOString()}</lastmod>
+      </url>
     </urlset>
   `;
 }

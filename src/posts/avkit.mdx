@@ -1,0 +1,58 @@
+---
+title: 'AVKit Integration'
+date: '2024-10-19'
+image: 'https://dev-to-uploads.s3.amazonaws.com/uploads/articles/os3gxi2tag5n8efxgymr.gif'
+---
+
+Just copy the below code and modify according to your needs.
+
+```
+import AVKit
+import SwiftUI
+
+struct VideoPlayerView: View {
+    private var player = AVPlayer(url: URL(string: "https://www.example.com/samplevideo.mp4")!)
+
+    var body: some View {
+        VStack {
+            VideoPlayer(player: player)
+                .frame(height: 300)
+                .cornerRadius(10)
+
+            HStack {
+                Button("Play Video") {
+                    player.play()
+                }
+                .font(.headline)
+                .foregroundColor(.white)
+                .padding()
+                .background(Color.blue)
+                .cornerRadius(8)
+
+                Button("Pause Video") {
+                    player.pause()
+                }
+                .font(.headline)
+                .foregroundColor(.white)
+                .padding()
+                .background(Color.red)
+                .cornerRadius(8)
+            }
+            .padding(.top, 20)
+        }
+        .padding()
+    }
+}
+
+struct ContentView: View {
+    var body: some View {
+        VStack {
+            Text("Welcome to Video Player")
+                .font(.largeTitle)
+                .padding()
+
+            VideoPlayerView()
+        }
+    }
+}
+```

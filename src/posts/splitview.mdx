@@ -1,0 +1,61 @@
+---
+title: 'SplitView'
+date: '2024-10-19'
+image: 'https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2xprayqorcdadzv5gobd.gif'
+---
+
+### Step 1: Understanding the Split View Layout
+
+In a **split view**, you typically have:
+
+1. A **sidebar** (or master view) that displays a list of items.
+2. A **detail view** that shows content based on the selection from the sidebar.
+
+SwiftUI makes it easy to create this kind of layout using `NavigationSplitView`.
+
+### Step 2: Building the Split View
+
+```swift
+import SwiftUI
+
+struct SplitViewExample: View {
+    @State private var selectedItem: String? = "Item 1"
+    let items = ["Item 1", "Item 2", "Item 3"]
+
+    var body: some View {
+        NavigationSplitView {
+            // Sidebar View
+            List(items, id: \.self, selection: $selectedItem) { item in
+                Text(item)
+                    .padding()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+            }
+            .navigationTitle("Sidebar")
+        } detail: {
+            // Detail View
+            if let selectedItem = selectedItem {
+                DetailView(selectedItem: selectedItem)
+            } else {
+                Text("Select an item")
+                    .font(.largeTitle)
+                    .foregroundColor(.gray)
+            }
+        }
+    }
+}
+
+struct DetailView: View {
+    let selectedItem: String
+
+    var body: some View {
+        VStack {
+            Text("Details for \(selectedItem)")
+                .font(.largeTitle)
+                .padding()
+
+            Spacer()
+        }
+        .navigationTitle("Detail")
+    }
+}
+```

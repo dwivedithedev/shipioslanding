@@ -1,0 +1,82 @@
+---
+title: 'Animations with Lottie'
+date: '2024-10-19'
+image: 'https://dev-to-uploads.s3.amazonaws.com/uploads/articles/p3kl1pwehqiysu9j03ff.gif'
+---
+
+### Step 1: Setting Up Lottie
+
+First, you need to add the Lottie framework to your project. You can do this using Swift Package Manager or by manually adding the Lottie files.
+
+1. **Using Swift Package Manager**:
+   - Go to **File** > **Add Packages**.
+   - Search for `Lottie` or use the URL: `https://github.com/airbnb/lottie-ios`.
+   - Add the package to your project.
+
+### Step 2: Create a SwiftUI Wrapper for Lottie
+
+Next, you’ll create a SwiftUI wrapper for the Lottie animation view. This allows you to easily use Lottie animations within your SwiftUI views.
+
+```swift
+import SwiftUI
+import Lottie
+
+struct LottieView: UIViewRepresentable {
+    var filename: String
+
+    func makeUIView(context: Context) -> UIView {
+        let view = UIView(frame: .zero)
+
+        let animationView = LottieAnimationView(name: filename)
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        animationView.play()
+
+        animationView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(animationView)
+
+        NSLayoutConstraint.activate([
+            animationView.widthAnchor.constraint(equalTo: view.widthAnchor),
+            animationView.heightAnchor.constraint(equalTo: view.heightAnchor)
+        ])
+
+        return view
+    }
+
+    func updateUIView(_ uiView: UIView, context: Context) {
+        // Update the view if needed
+    }
+}
+```
+
+### Step 3: Using Lottie Animations in Your View
+
+Now that you have your LottieView set up, you can use it in your SwiftUI views.
+
+```
+import SwiftUI
+
+struct AnimationExampleView: View {
+    var body: some View {
+        VStack {
+            Text("Loading...")
+                .font(.largeTitle)
+                .padding()
+
+            LottieView(filename: "loading_animation", loop: true)
+                .frame(width: 200, height: 200)
+        }
+        .padding()
+        .navigationTitle("Lottie Animation Example")
+    }
+}
+```
+
+**Comments for Customization:**
+
+- **LottieView(filename: "loading_animation", loop: true):** This instantiates the LottieView with a specific animation file. Replace "loading_animation" with the name of your Lottie animation file (without the .json extension).
+- **frame(width: 200, height: 200):** Sets the size of the animation view. Adjust these values to fit your design.
+
+### Step 4: Adding Your Animation Files
+
+Make sure to add your Lottie animation files (in JSON format) to your Xcode project. Simply drag and drop the .json files into your project navigator.

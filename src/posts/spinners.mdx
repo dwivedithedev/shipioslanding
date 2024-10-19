@@ -1,0 +1,41 @@
+---
+title: 'Spinners'
+date: '2024-10-19'
+image: 'https://dev-to-uploads.s3.amazonaws.com/uploads/articles/p3kl1pwehqiysu9j03ff.gif'
+---
+
+Just copy the below code and modify according to your needs.
+
+```
+import SwiftUI
+
+struct SpinnerExampleView: View {
+    @State private var isLoading = false
+
+    var body: some View {
+        VStack {
+            if isLoading {
+                ProgressView("Loading...")
+                    .progressViewStyle(CircularProgressViewStyle(tint: .blue)) // Customize color
+                    .scaleEffect(1.5) // Adjust size
+                    .padding()
+            } else {
+                Button("Load Data") {
+                    loadData()
+                }
+                .padding()
+            }
+        }
+        .navigationTitle("Spinner Example")
+    }
+
+    private func loadData() {
+        isLoading = true
+
+        // Simulating a network call
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            isLoading = false // Stop loading after 2 seconds
+        }
+    }
+}
+```
